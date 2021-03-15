@@ -1,18 +1,22 @@
 {
   "name": "AuthLog",
-	"author": "Jake Berg",
+  "author": "Jake Berg",
   "version": "1.0.0",
-	"scripts": {
-		"start": "nodemon --exec ts-node src/index.ts"
-	},
+  "scripts": {
+    "start": "nodemon --exec ts-node src/index.ts"
+  },
   "dependencies": {
     "apollo-server-express": "^2.21.1",
+    "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
     "graphql": "^15.5.0",
+    "pg": "^8.5.1",
     "reflect-metadata": "^0.1.13",
-    "type-graphql": "^1.1.1"
+    "type-graphql": "^1.1.1",
+    "typeorm": "^0.2.31"
   },
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
     "@types/express": "^4.17.11",
     "@types/graphql": "^14.5.0",
     "@types/node": "^14.14.34",
