@@ -1,6 +1,10 @@
 {
   "name": "AuthLog",
+	"author": "Jake Berg",
   "version": "1.0.0",
+	"scripts": {
+		"start": "nodemon --exec ts-node src/index.ts"
+	},
   "dependencies": {
     "apollo-server-express": "^2.21.1",
     "express": "^4.17.1",
