@@ -8,11 +8,14 @@ import session from "express-session";
 import connectRedis from "connect-redis";
 import { redis } from "./redis";
 import cors from "cors";
+import { LoginResolver } from "./modules/user/Login";
+import { MeResolver } from "./modules/user/Me";
 
 const main = async () => {
 	await createConnection();
+
 	const schema = await buildSchema({
-		resolvers: [RegisterResolver],
+		resolvers: [MeResolver, RegisterResolver, LoginResolver],
 	});
 
 	const apolloServer = new ApolloServer({
@@ -35,14 +38,14 @@ const main = async () => {
 				client: redis as any
 			}),
 			name: "qid",
-			secret: "SESSION_SECRET",
+			secret: "blahblahblah",
 			resave: false,
 			saveUninitialized: false,
 			cookie: {
 				httpOnly: true,
 				secure: process.env.NODE_ENV === "production",
 				maxAge: 1000 * 60 * 60 * 24 * 7 * 365 // this is equal to 7 years
-			},
+			}
 		})
 	);
 

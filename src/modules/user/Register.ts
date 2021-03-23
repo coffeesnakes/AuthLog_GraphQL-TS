@@ -1,19 +1,20 @@
 import { Resolver, Query, Mutation, Arg } from "type-graphql";
-import bcrypt from 'bcryptjs';
+import bcrypt from "bcryptjs";
+
 import { User } from "../../entity/User";
 import { RegisterInput } from "./register/RegisterInput";
 
 @Resolver()
 export class RegisterResolver {
   @Query(() => String)
-  async hellofriend() {
-    return "you made your first graphqQL query";
+  async hello() {
+    return "Hello World!";
   }
 
   @Mutation(() => User)
   async register(
     @Arg("data")
-    { email, firstName, lastName, password }: RegisterInput
+    { firstName, lastName, email, password }: RegisterInput
   ): Promise<User> {
     const hashedPassword = await bcrypt.hash(password, 12);
 

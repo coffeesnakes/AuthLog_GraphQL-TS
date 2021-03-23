@@ -3,7 +3,7 @@
   "author": "Jake Berg",
   "version": "1.0.0",
   "scripts": {
-    "start": "ts-node-dev  --respawn -no-notify src/index.ts"
+    "start": "ts-node-dev  --respawn src/index.ts"
   },
   "dependencies": {
     "apollo-server-express": "^2.21.1",
